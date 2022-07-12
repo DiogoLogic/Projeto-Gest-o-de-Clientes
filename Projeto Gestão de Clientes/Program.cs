@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Projeto_Gestão_de_Clientes
 {
@@ -21,6 +23,7 @@ namespace Projeto_Gestão_de_Clientes
 
         static void Main(string[] args)
         {
+            Carregar();
 
             bool escolherSair = false;
 
@@ -45,12 +48,10 @@ namespace Projeto_Gestão_de_Clientes
                     case Menu.Sair:
                             escolherSair = true;
                         break;
-
                 }
                 Console.Clear();
             }
           
-
         }
 
         static void Adicionar()
@@ -65,6 +66,7 @@ namespace Projeto_Gestão_de_Clientes
             cliente.cpf = Console.ReadLine();
 
             clientes.Add(cliente);
+            Salvar();
 
 
             Console.WriteLine("Cadastro do cliente concluído, aperte enter para sair");
@@ -92,8 +94,41 @@ namespace Projeto_Gestão_de_Clientes
             {
                 Console.WriteLine("Não tem nem um cliente cadastrado");
             }
+
             Console.WriteLine("Aperte enter para sair. ");
             Console.ReadLine();
+        }
+
+        static void Salvar()
+        {
+            FileStream arquivo = new FileStream("clientes.txt", FileMode.OpenOrCreate);// Criando arquivo estensão .dat, se não ouver arquivo criar um novo.
+            BinaryFormatter encoder = new BinaryFormatter();
+
+            encoder.Serialize(arquivo, clientes);
+            arquivo.Close();
+        }
+
+        static void Carregar()
+        {
+            FileStream arquivo = new FileStream("clientes.txt", FileMode.OpenOrCreate);// Criando arquivo estensão .dat, se não ouver arquivo criar um novo.
+            try
+            {
+                
+                BinaryFormatter encoder = new BinaryFormatter();
+
+                clientes = (List<Cliente>)encoder.Deserialize(arquivo);
+
+                if(clientes == null)
+                {
+                    clientes=new List<Cliente>();
+                }
+            }
+            catch(Exception e)
+            {
+                clientes = new List<Cliente>();
+            }
+            arquivo.Close();
+        
         }
     }
 }
