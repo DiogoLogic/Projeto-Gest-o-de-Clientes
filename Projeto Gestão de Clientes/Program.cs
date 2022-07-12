@@ -101,7 +101,7 @@ namespace Projeto_Gestão_de_Clientes
 
         static void Salvar()
         {
-            FileStream arquivo = new FileStream("clientes.txt", FileMode.OpenOrCreate);// Criando arquivo estensão .dat, se não ouver arquivo criar um novo.
+            FileStream arquivo = new FileStream("clientes.txt", FileMode.OpenOrCreate);// Criando arquivo estensão .txt, se não ouver arquivo criar um novo.
             BinaryFormatter encoder = new BinaryFormatter();
 
             encoder.Serialize(arquivo, clientes);
@@ -110,7 +110,7 @@ namespace Projeto_Gestão_de_Clientes
 
         static void Carregar()
         {
-            FileStream arquivo = new FileStream("clientes.txt", FileMode.OpenOrCreate);// Criando arquivo estensão .dat, se não ouver arquivo criar um novo.
+            FileStream arquivo = new FileStream("clientes.txt", FileMode.OpenOrCreate);// carregando arquivo estensão .txt, se não ouver arquivo criar um novo.
             try
             {
                 
