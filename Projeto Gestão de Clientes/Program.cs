@@ -80,15 +80,15 @@ namespace Projeto_Gestão_de_Clientes
             if(clientes.Count > 0) // Se tem pelo menos um cliente cadastrado
             {
                 Console.WriteLine("Lista de clientes");
-                int ID = 0; // A cada looping é incrementado um ID 
+                int id = 0; // A cada looping é incrementado um ID 
                 foreach (Cliente cliente in clientes)
                 {
-                    Console.WriteLine($"ID: {ID}");
+                    Console.WriteLine($"ID: {id}");
                     Console.WriteLine($"Nome:{cliente.nome}");
                     Console.WriteLine($"Email:{cliente.email}");
                     Console.WriteLine($"cpf:{cliente.cpf}");
                     Console.WriteLine("==========================================");
-                    ID++;
+                    id++;
                 }
             }
             else
@@ -103,16 +103,16 @@ namespace Projeto_Gestão_de_Clientes
         static void Remover()
         {
             ListagemClientes();
-            Console.WriteLine("Digite o ID do cliente que voc~^e quer remover: ");
+            Console.WriteLine("Digite o ID do cliente que você quer remover: ");
             int id = int.Parse(Console.ReadLine());
-            if (id > 0 && id < clientes.Count)
+            if (id >= 0 && id < clientes.Count)
             {
                 clientes.RemoveAt(id);
                 Salvar();
             }
             else
             {
-                Console.WriteLine("id digitado é invalido, tente novamente");
+                Console.WriteLine("id digitado é invalido, tente novamente, aperte ENTER");
                 Console.ReadLine();
             }
         }
