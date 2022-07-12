@@ -2,4 +2,4 @@
 
 Este projeto foi desenvolvido com o objetivo de conhecer a sintaxe básica da linguagem C# 
 
-Link do peojeto compilado para download -> https://drive.google.com/file/d/1NkoKx-kwNtKRV6noHyxeJxHE9SKecNlt/view?usp=sharing
+Link do projeto compilado para download -> https://drive.google.com/file/d/1NkoKx-kwNtKRV6noHyxeJxHE9SKecNlt/view?usp=sharing
