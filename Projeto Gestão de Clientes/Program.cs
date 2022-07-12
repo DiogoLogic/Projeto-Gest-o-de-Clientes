@@ -77,15 +77,15 @@ namespace Projeto_Gestão_de_Clientes
             if(clientes.Count > 0) // Se tem pelo menos um cliente cadastrado
             {
                 Console.WriteLine("Lista de clientes");
-                int i = 0;
+                int ID = 0; // A cada looping é incrementado um ID 
                 foreach (Cliente cliente in clientes)
                 {
-                    Console.WriteLine($"ID: {i}");
+                    Console.WriteLine($"ID: {ID}");
                     Console.WriteLine($"Nome:{cliente.nome}");
                     Console.WriteLine($"Email:{cliente.email}");
                     Console.WriteLine($"cpf:{cliente.cpf}");
-                    Console.WriteLine("===================");
-                    i++;
+                    Console.WriteLine("==========================================");
+                    ID++;
                 }
             }
             else
