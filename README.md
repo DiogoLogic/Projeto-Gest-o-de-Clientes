@@ -1,7 +1,7 @@
-# Projeto Gestão de Clientes
+# Projeto Gestão de Clientes (Básico)
 
-Este projeto foi desenvolvido com o objetivo de conhecer a sintaxe básica da linguagem C#, 
-aplicação do tipo console.
+Este projeto foi desenvolvido com o objetivo de usar a sintaxe básica da linguagem C#. 
+Aplicação do tipo console.
 
 Link do projeto compilado para download -> https://drive.google.com/file/d/1NkoKx-kwNtKRV6noHyxeJxHE9SKecNlt/view?usp=sharing
 
