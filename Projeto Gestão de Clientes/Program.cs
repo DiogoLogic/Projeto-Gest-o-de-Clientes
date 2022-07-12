@@ -30,7 +30,7 @@ namespace Projeto_Gestão_de_Clientes
             while (!escolherSair)
             {
                 //Iniciando menu
-                Console.WriteLine("Sistema de clientes - Bem vindo!\n");
+                Console.WriteLine("Sistema de Gestão de Clientes - Bem vindo!\n");
                 Console.WriteLine("1-Listagem\n2-adicionar\n3-remover\n4-Sair");
                 int intOp = int.Parse(Console.ReadLine());
                 Menu opcao = (Menu)intOp;
@@ -119,7 +119,7 @@ namespace Projeto_Gestão_de_Clientes
 
         static void Salvar()
         {
-            FileStream arquivo = new FileStream("clientes.txt", FileMode.OpenOrCreate);// Criando arquivo estensão .txt, se não ouver arquivo criar um novo.
+            FileStream arquivo = new FileStream("Dados_dos_clientes.txt", FileMode.OpenOrCreate);// Criando arquivo estensão .txt, se não ouver arquivo criar um novo.
             BinaryFormatter encoder = new BinaryFormatter();
 
             encoder.Serialize(arquivo, clientes);
@@ -128,7 +128,7 @@ namespace Projeto_Gestão_de_Clientes
 
         static void Carregar()
         {
-            FileStream arquivo = new FileStream("clientes.txt", FileMode.OpenOrCreate);// carregando arquivo estensão .txt, se não ouver arquivo criar um novo.
+            FileStream arquivo = new FileStream("Dados_dos_clientes.txt", FileMode.OpenOrCreate);// carregando arquivo estensão .txt, se não ouver arquivo criar um novo.
             try
             {
                 
