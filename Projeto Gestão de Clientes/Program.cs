@@ -28,13 +28,14 @@ namespace Projeto_Gestão_de_Clientes
             {
                 //Iniciando menu
                 Console.WriteLine("Sistema de clientes - Bem vindo!\n");
-                Console.WriteLine("1-Listagem\n2-adcionar\n3-remover\n4-Sair");
+                Console.WriteLine("1-Listagem\n2-adicionar\n3-remover\n4-Sair");
                 int intOp = int.Parse(Console.ReadLine());
                 Menu opcao = (Menu)intOp;
 
                 switch (opcao)
                 {
                     case Menu.Listagem:
+                        ListagemClientes();
                         break;
                     case Menu.adicionar:
                         Adicionar();
@@ -70,6 +71,29 @@ namespace Projeto_Gestão_de_Clientes
             Console.ReadLine();
         }
 
-        
+        static void ListagemClientes()
+        {
+
+            if(clientes.Count > 0) // Se tem pelo menos um cliente cadastrado
+            {
+                Console.WriteLine("Lista de clientes");
+                int i = 0;
+                foreach (Cliente cliente in clientes)
+                {
+                    Console.WriteLine($"ID: {i}");
+                    Console.WriteLine($"Nome:{cliente.nome}");
+                    Console.WriteLine($"Email:{cliente.email}");
+                    Console.WriteLine($"cpf:{cliente.cpf}");
+                    Console.WriteLine("===================");
+                    i++;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Não tem nem um cliente cadastrado");
+            }
+            Console.WriteLine("Aperte enter para sair. ");
+            Console.ReadLine();
+        }
     }
 }
