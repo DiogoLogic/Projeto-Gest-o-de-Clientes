@@ -36,8 +36,9 @@ namespace Projeto_Gestão_de_Clientes
                         break;
 
                 }
+                Console.Clear();
             }
-            Console.ReadLine();
+          
 
         }
     }
