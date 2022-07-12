@@ -8,6 +8,15 @@ namespace Projeto_Gestão_de_Clientes
 {
     internal class Program
     {
+        [System.Serializable]
+        struct Cliente
+        {
+            public string nome;
+            public string email;
+            public string cpf;
+        }
+        static List<Cliente> clientes = new List<Cliente>();
+
         enum Menu {Listagem = 1, adicionar = 2, remover = 3, Sair = 4}
 
         static void Main(string[] args)
