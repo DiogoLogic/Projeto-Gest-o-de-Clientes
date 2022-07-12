@@ -37,6 +37,7 @@ namespace Projeto_Gestão_de_Clientes
                     case Menu.Listagem:
                         break;
                     case Menu.adicionar:
+                        Adicionar();
                         break;
                     case Menu.remover:
                         break;
@@ -50,5 +51,25 @@ namespace Projeto_Gestão_de_Clientes
           
 
         }
+
+        static void Adicionar()
+        {
+            Cliente cliente = new Cliente();
+            Console.WriteLine("Cadastro de cliente: ");
+            Console.WriteLine("Nome do cliente: ");
+            cliente.nome = Console.ReadLine();
+            Console.WriteLine("Email do cliente: ");
+            cliente.email = Console.ReadLine();
+            Console.WriteLine("CPF do cliente: ");
+            cliente.cpf = Console.ReadLine();
+
+            clientes.Add(cliente);
+
+
+            Console.WriteLine("Cadastro do cliente concluído, aperte enter para sair");
+            Console.ReadLine();
+        }
+
+        
     }
 }
